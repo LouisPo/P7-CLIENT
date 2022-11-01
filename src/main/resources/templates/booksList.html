@@ -1,0 +1,91 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Les Bibliothèques de Louis</title>
+</head>
+<body>
+<div class="bloc_page">
+    <header>
+        <div class="header_top_part">
+            <div th:insert="menu.html"></div>
+        </div>
+        <div class="header_bottom_part">
+            <h1>TOUS LES LIVRES</h1>
+        </div>
+    </header>
+
+    <form class="form-inline" id="searchField" action="#" th:action="@{/books/search}" th:method="get"
+          th:object="${keyword}">
+        <label>Filtrer : </label> <input id="txtSearch" type="text" name="keyword" th:value="${keyword}"
+                                         class="form-control" placeholder="titre">
+        <input class="btn btn-primary" type="submit" value="chercher"></input>
+    </form>
+
+
+
+    <div class="row" id="blocPageBooksList" th:each="book:${booksSlims}">
+        <!--<div th:if="${book.cover == null}" class="col-sm-4">
+            <img class="img-fluid" alt="generic image of book"
+                 src="imagesAndLogos/images/GenericImageOfABook.png">
+        </div>
+
+        <div th:if="${book.cover != null}" class="col-sm-4">
+            <img class="img-fluid" alt="cover of the book"
+                 th:src="*{'data:image/png;base64,'+{book.cover}}">
+        </div>
+-->
+        <div class="col-sm-4">
+            <img class="img-fluid" alt="generic image of book"
+                 src="/images/GenericImageOfABook.png">
+        </div>
+
+
+        <div class="col-sm-4" id="descriptionBooksList">
+            <div class="titleAndTagged">
+                <h3 th:text="${book.title}"></h3>
+                <div th:each="currentStock: ${book.numberOfCopiesAvailable}">
+                    <div class="float-right" th:if="${book.numberOfCopiesAvailable>0}">
+                        <img class="img-fluid" alt="logoLivreDisponible"
+                             src="/logos/logoLivreDisponible.png">
+                    </div>
+                    <div class="float-right"
+                         th:if="${book.numberOfCopiesAvailable==0}">
+                        <img class="img-fluid" alt="logoLivreDisponible"
+                             src="/logos/logoLivreIndisponible.png">
+                    </div>
+
+                </div>
+            </div>
+
+            <div>
+                AUTEUR : <a th:text="${book.author}"></a>
+            </div>
+            <div>
+                GENRE : <a th:text="${book.type}"></a>
+            </div>
+            <div>
+                EDITEUR : <a th:text="${book.publisher}"></a>
+            </div>
+
+            <div>
+                RESUME : <a th:text="${book.summary}"></a>
+            </div>
+            <div>
+                Se livre se trouve à la bibliothèque de : <a th:text="${book.libraryName}"></a>
+            </div>
+            <div>
+                Nombre de copies disponibles : <a th:text="${book.numberOfCopiesAvailable}"></a>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <footer>
+        <div th:insert="footer.html"></div>
+    </footer>
+</div>
+</body>
+</html>
