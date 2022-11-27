@@ -18,7 +18,7 @@
 		<div class="logo">
 			<p>
 				<img class="mx-auto d-block"
-					alt="logo des Bibliothèques " src="/logos/logo.png">
+					alt="logo des Bibliothèques de Louis" src="/logos/logo.png">
 			</p>
 		</div>
 	</div>
@@ -29,7 +29,7 @@
 			<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
 			<li class="dropdown">
 				<button type="button" class="btn btn-primary dropdown-toggle"
-					data-toggle="dropdown">Les bibliothèques</button>
+					data-toggle="dropdown">Les Bibliothèques</button>
 				<div class="dropdown-menu">
 					<a class="dropdown-item" href="/libraries">La liste
 						des bibliothèques</a> <!--<a class="dropdown-item"
@@ -53,13 +53,10 @@
 			<!--sec:authorize="isAuthenticated()"-->
 			<li class="dropdown" >
 				<button type="button" class="btn btn-primary dropdown-toggle"
-						data-toggle="dropdown">Mon compte</button>
+						data-toggle="dropdown">Mon Compte</button>
 				<div class="dropdown-menu">
-					<a class="nav-link" href="/login">Mon compte</a>
-					<!--<div th:if="${user.name==''}">-->
-					<a class="dropdown-item" href="/users/account/borrows">Emprunts</a>
-					<!--</div>-->
-					<a class="dropdown-item" th:href="@{/logout}">Déconnection</a>
+					<a class="nav-link" href="/login">Mon Compte</a>
+					<!--<a class="dropdown-item" th:href="@{/logout}">Déconnection</a>-->
 				</div>
 			</li>
 
