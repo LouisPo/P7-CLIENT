@@ -31,13 +31,13 @@ header .header_top_part{
 	color: white;
 }
 
-/* pour les menus cachés */
+/* pour les menus cachÃ©s */
 /*le conteneur du dropdown*/
 .dropdown {
 	position: relative;
 	display: inline-block;
 }
-/* le dropdown_content qui est caché par défaut */
+/* le dropdown_content qui est cachÃ© par dÃ©faut */
 .dropdown_content {
 	display: none;
 	position: absolute;
@@ -131,7 +131,7 @@ input[type=text] {
 }
 
 /* ---------------------------------------------------------------- */
-/* Liste des bibliothèques */
+/* Liste des bibliothÃ¨ques */
 
 #searchField{
 	margin-left: 5%;
